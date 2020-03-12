@@ -9,21 +9,11 @@ APT Simulator is a Windows Batch script that uses a set of tools and output file
 3. Test your SOCs response on a threat that isn't EICAR or a port scan
 4. Prepare an environment for digital forensics classes
 
-# Motives
-
-Customers tested [our scanners](https://www.nextron-systems.com/compare-our-scanners/) in a POC and sent us a complaint that our scanners didn't report on programs that they had installed on their test systems. They had installed an Nmap, dropped a PsExec.exe in the Downloads folder and placed on EICAR test virus on the user's Desktop. That was the moment when I decided to build a tool that simulates a real threat in a more appropriate way.
-
 # Why Batch?
 
 - Because it's simple: Everyone can read, modify or extend it
 - It runs on every Windows system without any prerequisites
 - It is closest to a real attacker working on the command line
-
-# Focus
-
-The focus of this tool is to simulate adversary activity, not malware. See the [Advanced Solutions](#advanced-solutions) section for advanced tools to simulate adversary and malware activity.
-
-![APT vs Malware](/screenshots/MalwareAPT.png)
 
 # Getting Started
 
@@ -31,26 +21,6 @@ The focus of this tool is to simulate adversary activity, not malware. See the [
 2. Extract the package on a demo system (Password: apt)
 3. Start a cmd.exe as Administrator
 4. Navigate to the extracted program folder and run APTSimulator.bat
-
-# Avoiding Early Detection
-
-The batch script extracts the tools and shells from an encrypted 7z archive at runtime. Do not download the master repo using the "download as ZIP" button. Instead use the official release from the [release](https://github.com/Neo23x0/APTSimulator/releases) section.
-
-## AV Excluder
-
-APT Simulator contains a module named "AVExcluder" that tries to register the used `%APTDIR%` as AV exclusion in typical AV solutions. As I do not have access to all of the AV software products in the market, please report errors or add new exclusions as pull requests.
-
-# Extending the Test Cases
-
-Since version 0.4 it is pretty easy to extend the test sets by adding a single `.bat` file to one of the test-set category folders.
-
-E.g. If you want to write a simple test case for "privilege escalation", that uses a tool named "privesc.exe", clone the repo and do the following:
-
-1. Add your tool to the `toolset` folder
-2. Write a new batch script `privesc-1.bat` and add it to the `./test-sets/privilege-escalation` folder
-3. Run `build_pack.bat`
-4. Add your test case to the table and test sets section in the README.md
-5. Create a pull request
 
 ## Tool and File Extraction
 

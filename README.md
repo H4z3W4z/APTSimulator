@@ -249,6 +249,3 @@ Flightsim - A utility to generate malicious network traffic and evaluate control
 - [7Zip](http://www.7-zip.org/download.html)
 - [curl](https://curl.haxx.se/)
 
-# Contact
-
-Follow and contact me on Twitter @cyb3rops
